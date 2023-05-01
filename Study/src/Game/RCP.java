@@ -47,12 +47,40 @@ public class RCP {
             String answer = sc.next();
             end_player1 = System.currentTimeMillis();
             double time_plyaer1 = (end_player1 - start_player1)*0.001;
+            // 시간초과로 패배
             if(time_plyaer1>3){
                 System.out.println("시간이 초과되었습니다!!!");
                 break;
             }
+            // 승부 확인하기
+            if(rcp==0){
+                if(answer.equals("바위")){
+                    score1++;
+                }else{
+                    System.out.println("게임이 종료 되었습니다!");
+                    break;
+                }
+            }
+            if(rcp==1){
+                if(answer.equals("보")){
+                    score1++;
+                }else{
+                    System.out.println("게임이 종료 되었습니다!");
+                    break;
+                }
+            }
+            if(rcp==2){
+                if(answer.equals("가위")){
+                    score1++;
+                }else{
+                    System.out.println("게임이 종료 되었습니다!");
+                    break;
+                }
+            }
+
 
 
         }
+        System.out.println(player1+"님의 점수는 "+ score1+"점 입니다");
     }
 }
